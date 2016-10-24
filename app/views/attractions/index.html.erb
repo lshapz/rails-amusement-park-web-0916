@@ -1,0 +1,9 @@
+
+<% @attractions.each do |att| %>
+<%= link_to "Go on #{att.name}", att %>
+<%= att.name %>
+<%= att.nausea_rating %>
+<%= att.happiness_rating %>
+<%= att.tickets %>
+<%= att.min_height %>
+<% end %>

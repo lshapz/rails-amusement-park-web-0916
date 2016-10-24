@@ -3,6 +3,7 @@ root 'application#index'
 resources :users
 resources :rides
 resources :attractions
+resources :rides
 resources :sessions, except: [:new]
 get '/signout', to: "sessions#destroy", as: :signout
 get '/signin', to: "sessions#new", as: :signin

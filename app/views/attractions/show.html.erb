@@ -1,0 +1,15 @@
+Name: <%= @attraction.name %>
+Nausea: <%= @attraction.nausea_rating %>
+Happiness: <%= @attraction.happiness_rating %>
+Tickets: <%= @attraction.tickets %>
+Height: <%= @attraction.min_height %>
+
+<% if @user.admin == true %>
+  <%= link_to 'Edit Ride', 'attractions/edit' %>
+<% else %>
+  <%= form_tag(rides_path) do %>
+<%= hidden_field_tag :attraction_id, @attraction.id  %>
+  <%= submit_tag "Go on this ride", class: "class" %>
+<% end %>
+
+<% end %>
