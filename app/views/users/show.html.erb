@@ -1,0 +1,19 @@
+Name: <%= @user.name %>
+
+
+<% if @user.admin == true %>
+  ADMIN
+<% else %>
+  Nausea: <%= @user.nausea %>
+
+  Happiness: <%= @user.happiness %>
+
+  Mood: <%= @user.mood %>
+
+  Height: <%= @user.height %>
+
+  Tickets: <%= @user.tickets %>
+
+<% end %>
+
+<%= link_to '/signout' %>

@@ -47,6 +47,7 @@ describe 'Feature Test: User Signup', :type => :feature do
       tickets: 10,
       height: 50
     )
+    #binding.pry
     visit '/users/1'
     expect(current_path).to eq('/')
     expect(page).to have_content("Sign Up")
@@ -56,6 +57,7 @@ describe 'Feature Test: User Signup', :type => :feature do
     visit_signup
     expect(current_path).to eq('/users/new')
     admin_signup
+    # binding.pry
     expect(current_path).to eq('/users/1')
     expect(page).to have_content("Walt Disney")
     expect(page).to have_content("ADMIN")
