@@ -1,8 +1,13 @@
-<% form_for @attraction do |f| -%>
+<%= form_for @attraction do |f| -%>
   <%= f.text_field :name %>
   <%= f.number_field :nausea_rating %>
     <%= f.number_field :happiness_rating %>
       <%= f.number_field :tickets %>
         <%= f.number_field :min_height %>
-        <%= submit_tag "New Attraction", class: "class" %>
+       <%= f.submit "New Attraction", :disable_with => 'Newing...' %>
+<% end %>
+
+
+<% if current_user.admin == true %>
+  <%= link_to "New Attraction", new_attraction_path %>
 <% end %>

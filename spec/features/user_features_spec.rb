@@ -317,6 +317,7 @@ describe 'Feature Test: Admin Flow', :type => :feature do
 
   it 'allows admins to add an attraction' do
     click_link('See attractions')
+    # binding.pry
     click_link("New Attraction")
     expect(current_path).to eq('/attractions/new')
     fill_in("attraction[name]", :with => "Haunted Mansion")
