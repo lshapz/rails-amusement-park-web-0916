@@ -4,10 +4,9 @@
     <%= f.number_field :happiness_rating %>
       <%= f.number_field :tickets %>
         <%= f.number_field :min_height %>
-       <%= f.submit "New Attraction", :disable_with => 'Newing...' %>
+       <%= f.submit "Create Attraction", :disable_with => 'Newing...' %>
 <% end %>
 
 
 <% if current_user.admin == true %>
-  <%= link_to "New Attraction", new_attraction_path %>
-<% end %>
+  <%= link_to "New Attraction", new_attraction_path, {name: "New Attraction", id: "New Attraction", value: "New Attraction"} %><% end %>

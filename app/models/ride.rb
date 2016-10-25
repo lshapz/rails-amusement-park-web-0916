@@ -8,14 +8,17 @@ class Ride < ActiveRecord::Base
     @user = User.find(self.user_id)
     @attraction = Attraction.find(self.attraction_id)
     if @user.tickets < @attraction.tickets && @user.height < @attraction.min_height
-      "Sorry. You do not have enough tickets the #{attraction.name}. You are not tall enough to ride the #{attraction.name}."
+     return "Sorry. You do not have enough tickets to ride the #{@attraction.name}. You are not tall enough to ride the #{attraction.name}."
       # maybe a redirect?
     elsif @user.height < @attraction.min_height
-      "Sorry. You are not tall enough to ride the #{attraction.name}."
+      return "Sorry. You are not tall enough to ride the #{@attraction.name}."
     elsif @user.tickets < @attraction.tickets
-      "Sorry. You do not have enough tickets the #{attraction.name}."    
+      return "Sorry. You do not have enough tickets to ride the #{@attraction.name}."    
     else
       @user.update_attributes(tickets: (@user.tickets - @attraction.tickets), nausea: @user.nausea += @attraction.nausea_rating, happiness: @user.happiness += @attraction.happiness_rating)
+    # binding.pry
+    return "Thanks for riding the #{@attraction.name}!"
+
     end
   end
 

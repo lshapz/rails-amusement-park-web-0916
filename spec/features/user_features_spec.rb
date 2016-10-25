@@ -215,9 +215,13 @@ describe 'Feature Test: Go on a Ride', :type => :feature do
   end
 
   it "clicking on 'Go on this ride' updates the users ticket number" do
+    @user = User.find_by(:name => "Amy Poehler")
+    #binding.pry
+    #@user.update(:tickets => 15)
     click_link('See attractions')
     click_link("Go on #{@ferriswheel.name}")
     click_button("Go on this ride")
+    # binding.pry
     expect(page).to have_content("Tickets: 13")
   end
 

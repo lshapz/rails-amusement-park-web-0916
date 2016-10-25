@@ -6,3 +6,8 @@
         <%= f.number_field :min_height %>
        <%= f.submit "Update Attraction", :disable_with => 'Newing...' %>
 <% end %>
+
+
+<% if current_user.admin == true %>
+  <%= link_to "New Attraction", new_attraction_path, {name: "New Attraction", id: "New Attraction", value: "New Attraction"} %>
+<% end %>
